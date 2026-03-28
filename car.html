@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Moving Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .road {
+            width: 100vw;
+            height: 150px;
+            background: #555;
+            position: absolute;
+            bottom: 0;
+        }
+        .car {
+            width: 150px;
+            height: 70px;
+            background: #e74c3c;
+            border-radius: 15px 15px 5px 5px;
+            position: absolute;
+            bottom: 50px;
+            animation: drive 8s linear infinite;
+        }
+        /* 车轮 */
+        .car::before, .car::after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background: #222;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -15px;
+        }
+        .car::before { left: 25px; }
+        .car::after { right: 25px; }
+        /* 车窗 */
+        .car::before {
+            box-shadow: 0 0 0 5px #fff;
+        }
+        .car::after {
+            box-shadow: 0 0 0 5px #fff;
+        }
+        .window {
+            width: 60px;
+            height: 30px;
+            background: #87ceeb;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes drive {
+            0% { left: -150px; }
+            100% { left: 100vw; }
+        }
+    </style>
+</head>
+<body>
+    <div class="road"></div>
+    <div class="car">
+        <div class="window"></div>
+    </div>
+</body>
+</html>
