@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Long Rectangle Rotate</title>
+    <style>
+        .long-box {
+            width: 200px;
+            height: 10px; /* 长条：10×200 */
+            background: linear-gradient(90deg, #3498db, #8e44ad);
+            margin: 100px auto;
+            /* 旋转动画 */
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="long-box"></div>
+</body>
+</html>
