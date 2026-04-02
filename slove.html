@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quadratic Equation Solver</title>
+</head>
+<body>
+    <h1>Quadratic Equation Solver (ax² + bx + c = 0)</h1>
+    <script>
+        // 步骤1：通过prompt获取用户输入的a、b、c
+        let aStr = prompt("请输入二次项系数 a (a > 0):");
+        let bStr = prompt("请输入一次项系数 b:");
+        let cStr = prompt("请输入常数项 c:");
+
+        // 步骤2：使用parseFloat转换为数字
+        let a = parseFloat(aStr);
+        let b = parseFloat(bStr);
+        let c = parseFloat(cStr);
+
+        // 输入合法性校验（增强鲁棒性）
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            alert("错误：请输入有效的数字！");
+            console.error("输入不是有效数字");
+        } else if (a <= 0) {
+            alert("错误：根据题目要求，a 必须大于 0！");
+            console.error("a 不满足 a > 0 的条件");
+        } else {
+            // 步骤3：计算判别式delta
+            let delta = b * b - 4 * a * c;
+
+            if (delta < 0) {
+                alert("错误：判别式 delta < 0，方程无实数根！");
+                console.log("delta =", delta, "，方程无实数根");
+            } else {
+                // 步骤4：计算两个根x1、x2
+                let sqrtDelta = Math.sqrt(delta);
+                let x1 = (-b + sqrtDelta) / (2 * a);
+                let x2 = (-b - sqrtDelta) / (2 * a);
+
+                // 步骤5：用alert展示结果
+                alert(`方程的两个实数根为：\nx1 = ${x1.toFixed(4)}\nx2 = ${x2.toFixed(4)}`);
+
+                // 步骤6：用console.log输出结果
+                console.log("输入系数：a =", a, ", b =", b, ", c =", c);
+                console.log("判别式 delta =", delta);
+                console.log("方程的根：x1 =", x1, ", x2 =", x2);
+            }
+        }
+    </script>
+</body>
+</html>
