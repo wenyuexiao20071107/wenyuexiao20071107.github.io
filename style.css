@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #87CEEB, #c4a4ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 2px 2px 6px #0003;
+    margin-bottom: 20px;
+}
+
+.control {
+    margin-bottom: 30px;
+}
+
+#diskNum {
+    width: 60px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    margin: 0 10px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #409eff;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 5px;
+}
+button:hover {
+    background: #2979d6;
+}
+
+.count {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.warn {
+    color: #ff4444;
+    font-size: 18px;
+    height: 25px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* 3D游戏舞台 */
+.game-box {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    perspective: 800px;
+}
+
+.peg-box {
+    width: 180px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(15deg);
+    cursor: pointer;
+}
+
+/* 柱子 */
+.peg-box::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 220px;
+    background: linear-gradient(90deg, #8B4513, #D2B48C, #8B4513);
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+/* 底座 */
+.peg-box::after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 15px;
+    background: #8B4513;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px;
+}
+
+/* 圆盘样式 */
+.disk {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px #0004;
+    cursor: pointer;
+}
+
+/* 选中高亮 */
+.disk.active {
+    box-shadow: 0 0 15px #fff, 0 4px 8px #0004;
+}

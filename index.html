@@ -1,1 +1,35 @@
-45666
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D汉诺塔</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>3D 汉诺塔</h1>
+
+        <!-- 控制面板 -->
+        <div class="control">
+            <label>圆盘数量：</label>
+            <input type="number" id="diskNum" min="3" max="8" value="3">
+            <button id="resetBtn">重置游戏</button>
+            <button id="autoBtn">自动求解</button>
+            <div class="count">移动步数：<span id="moveCount">0</span></div>
+        </div>
+
+        <!-- 警告提示 -->
+        <div id="warn" class="warn"></div>
+
+        <!-- 游戏舞台 3D -->
+        <div class="game-box">
+            <div class="peg-box" id="peg0"></div>
+            <div class="peg-box" id="peg1"></div>
+            <div class="peg-box" id="peg2"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
